@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Aliens</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Search UFO Sightings</h1>
+        <br>Search Type:
+        <form>
+            <select id='searchdropdown'>
+                <option value="datetime">Date (MM/DD/YYYY)</option>
+                <option value="city">City</option>
+                <option value="state">State</option>
+                <option value="country">Country</option>
+                <option value="shape">Shape</option>
+                <option value="durationMinutes">Duration (min)</option>
+            </select>
+            <br>Search Term:<br>
+            <input id='thefield' type="text" name="date" value="01/01/2010"><br>
+            <br><br>
+            <input id='thebutton' type="submit" value="Search">
+        </form>
+        <table class='thetable'>
+
+        </table>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src='data.js'></script>
+        <script src='script.js'></script>
+    </body>
+</html>

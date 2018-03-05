@@ -9,31 +9,63 @@
         <title>Aliens</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Search UFO Sightings</h1>
-        <br>Search Type:
-        <form>
-            <select id='searchdropdown'>
-                <option value="datetime">Date (MM/DD/YYYY)</option>
-                <option value="city">City</option>
-                <option value="state">State</option>
-                <option value="country">Country</option>
-                <option value="shape">Shape</option>
-                <option value="durationMinutes">Duration (min)</option>
-            </select>
-            <br>Search Term:<br>
-            <input id='thefield' type="text" name="date" value="01/01/2010"><br>
-            <br><br>
-            <input id='thebutton' type="submit" value="Search">
-        </form>
-        <table class='thetable'>
+        
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+        
 
-        </table>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href='styles.css'>
+</head>
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <div class='col'>
+                    <h1>Search UFO Sightings</h1>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                     <br><h2>Search Type:</h2>
+            <form>
+                <select id='searchdropdown'>
+                    <option value="datetime">Date (MM/DD/YYYY)</option>
+                    <option value="city">City</option>
+                    <option value="state">State (ST)</option>
+                    <option value="country">Country (CN)</option>
+                    <option value="shape">Shape</option>
+                    <option value="durationMinutes">Duration (min)</option>
+                </select>
+                
+                <br>Search Term:<br>
+                <input id='thefield' type="text" name="date" value="01/01/2010"><br>
+                <br><br>
+                <input id='thebutton' type="submit" value="Search">
+            </form>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <table class='thetable table table-dark'></table>
+                </div>
+            </div>
+            
+    </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <script src='data.js'></script>
         <script src='script.js'></script>
+        
     </body>
 </html>

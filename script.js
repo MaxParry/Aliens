@@ -1,4 +1,4 @@
-function createCell(content, celltype){
+function createCell(content, celltype, label){
     if (celltype == 'h'){
         var celltag = 'th';
     } else if (celltype == 'd'){
@@ -8,6 +8,12 @@ function createCell(content, celltype){
     var thiscell = document.createElement(celltag);
     thiscell.innerText = content;
 
+    if ((label == 'col') || (label == 'row')) {
+
+        thiscell.setAttribute("scope", label)
+        
+    }
+
     return thiscell;
 }
 
@@ -16,13 +22,13 @@ function renderRows(towhat, _array){
     towhat.innerHTML = '';
 
     var rowhead = document.createElement('tr')
-    var dateHead = createCell('DateTime', 'h')
-    var cityHead = createCell('City', 'h')
-    var stateHead = createCell('State', 'h')
-    var countryHead = createCell('Country', 'h')
-    var shapeHead = createCell('Shape', 'h')
-    var durHead = createCell('Duration (min)', 'h')
-    var comHead = createCell('Comments', 'h')
+    var dateHead = createCell('DateTime', 'h', 'col')
+    var cityHead = createCell('City', 'h', 'col')
+    var stateHead = createCell('State', 'h', 'col')
+    var countryHead = createCell('Country', 'h', 'col')
+    var shapeHead = createCell('Shape', 'h', 'col')
+    var durHead = createCell('Duration (min)', 'h', 'col')
+    var comHead = createCell('Comments', 'h', 'col')
 
     rowhead.appendChild(dateHead);
     rowhead.appendChild(cityHead);
@@ -39,7 +45,9 @@ function renderRows(towhat, _array){
     for (var i=0; i < _array.length; i++){
 
     var newrow = document.createElement('tr');
-
+    
+    var _tablehead = createCell(i + 1, 'h', 'row')
+    //var _tablehead = _tablehead.setAttribute("scope", "row")
     var _datetime = createCell(_array[i].datetime, 'd');
     var _city = createCell(_array[i].city, 'd');
     var _state = createCell(_array[i].state, 'd');
@@ -48,6 +56,7 @@ function renderRows(towhat, _array){
     var _duration = createCell(_array[i].durationMinutes, 'd');
     var _comments = createCell(_array[i].comments, 'd');
     
+    newrow.appendChild(_tablehead)
     newrow.appendChild(_datetime);
     newrow.appendChild(_city);
     newrow.appendChild(_state);
